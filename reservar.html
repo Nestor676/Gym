@@ -22,5 +22,32 @@
             </nav>
         </header>
 
+        <main class="page">
+
+            <h1 class="page-title">Nueva reserva</h1>
+
+            <div class="form-card">
+                <form id="reserva-form" novalidate>
+
+                <div class="form-group">
+                    <label for="nom-soci">Nombre del socio *</label>
+                    <input type="text" id="nom-soci" placeholder="Ex: Maria López" required autocomplete="off"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="sessio-select">Sesion *</label>
+                    <select id="sessio-select" required>
+                    <option value="">-- Selecciona una sessió --</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn--primary form-btn">Confirmar reserva</button>
+
+                </form>
+            </div>
+
+            <p class="color-muted margin-10-top">Consulta las reservas en la <a href="index.html" class="color-accent">pàgina principal</a>.</p>
+
+        </main>
     </body>
 </html>

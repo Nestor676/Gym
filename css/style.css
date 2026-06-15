@@ -198,3 +198,62 @@ nav a:hover, nav a.active{
 .color-muted{
     color:var(--c-muted)
 }
+
+.color-accent{
+    color:var(--c-accent)
+}
+
+/* Margins y paddings */
+
+.margin-10-top{
+    margin-top: 10px;
+}
+
+/* Forms */
+
+.form-card{
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  max-width: 540px;
+}
+
+.form-group{ 
+  margin-bottom: 17.6px; 
+}
+
+.form-group label{
+  display: block;
+  font-size: 13.12px;
+  font-weight: 600;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.12px;
+  margin-bottom: 6.4px;
+}
+
+.form-group input,
+.form-group select{
+  width: 100%;
+  background: var(--c-bg);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius);
+  color: var(--c-text);
+  padding: 10.4px 14.4px;
+  font-size: 15.2px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus{ 
+  border-color: var(--c-accent); 
+}
+
+.form-btn{
+    margin-top:12px;
+    width:100%
+}
