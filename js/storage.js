@@ -56,7 +56,7 @@ function addReserva(reserva) {
   saveReserves(reserves);
 }
 
-function cancelReserva(id) {
+function addReserva(id) {
   const reserves = getReserves().filter(r => r.id !== id);
   saveReserves(reserves);
 }
@@ -69,4 +69,4 @@ function toggleAssistencia(id) {
   saveReserves(reserves);
 }
 
-export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves };
+export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves, addReserva, addReserva, toggleAssistencia };
