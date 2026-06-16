@@ -69,4 +69,28 @@ function toggleAssistencia(id) {
   saveReserves(reserves);
 }
 
-export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves, addReserva, addReserva, toggleAssistencia };
+function generateReservaId() {
+
+  const reserves = getReserves();
+  const nums = reserves.map(r => parseInt(r.id.replace('reserva-', ''), 10)).filter(n => !isNaN(n));
+  const next = nums.length ? Math.max(...nums) + 1 : 1;
+
+  return `reserva-${String(next).padStart(3, '0')}`;
+}
+
+/* Import JSON */
+
+async function importSessionsFromJson(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+
+  const current = getSessions();
+  const existingIds = new Set(current.map(s => s.id));
+  const news = data.filter(s => !existingIds.has(s.id)).map(s => new Sessio(s));
+
+  saveSessions([...current, ...news]);
+  return news.length;
+}
+
+export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves, addReserva, addReserva, toggleAssistencia, 
+    generateReservaId, importSessionsFromJson };
