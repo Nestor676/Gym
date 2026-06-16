@@ -193,6 +193,12 @@ nav a:hover, nav a.active{
   cursor: not-allowed; 
 }
 
+.btn--danger {
+  background: rgba(255,79,106,.15);
+  color: var(--c-danger);
+  border: 1.5px solid var(--c-danger);
+}
+
 /* Colores */
 
 .color-muted{
@@ -315,4 +321,13 @@ tbody tr:hover {
 
 tbody td { 
   padding: 12.8px 16px;
+}
+
+/* JS */
+
+.empty-msg {
+  color: var(--c-muted);
+  font-size: .9rem;
+  text-align: center;
+  padding: 2rem;
 }
