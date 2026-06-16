@@ -1,0 +1,26 @@
+[
+    {
+        "id": "s-004",
+        "activitat": "Zumba",
+        "dia": "Dijous",
+        "hora": "19:00",
+        "monitor": "Carla Roca",
+        "aforament": 25
+    },
+    {
+        "id": "s-005",
+        "activitat": "CrossFit",
+        "dia": "Divendres",
+        "hora": "07:00",
+        "monitor": "Pau Martí",
+        "aforament": 10
+    },
+    {
+        "id": "s-006",
+        "activitat": "Body Pump",
+        "dia": "Dissabte",
+        "hora": "11:00",
+        "monitor": "Núria Font",
+        "aforament": 18
+    }
+]
