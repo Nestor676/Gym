@@ -277,6 +277,52 @@ nav a:hover, nav a.active{
     width: 100%;
 }
 
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.session-card {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: var(--transition);
+}
+.session-card:hover {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 1px var(--c-accent), var(--shadow);
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: .6rem;
+  gap: .5rem;
+}
+.session-activitat {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-text);
+}
+.session-badge {
+  background: rgba(124,111,255,.15);
+  color: var(--c-accent2);
+  border-radius: 20px;
+  padding: .2rem .7rem;
+  font-size: .75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.session-meta {
+  color: var(--c-muted);
+  font-size: .85rem;
+  margin-bottom: .75rem;
+}
+
 /* Table */
 
 .table-wrap {
@@ -330,4 +376,44 @@ tbody td {
   font-size: .9rem;
   text-align: center;
   padding: 2rem;
+}
+
+.barra--libre{ 
+  background: var(--c-accent); 
+}
+
+.barra--alta{ 
+  background: var(--c-warning); 
+}
+
+.barra--llena{ 
+  background: var(--c-danger);
+}
+
+.barra-hijo {
+  height: 100%;
+  border-radius: 99px;
+  transition: width .4s ease;
+}
+
+.barra-wrapper{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.barra-track{
+  flex: 1;
+  height: 8px;
+  background: var(--c-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.barra-label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--c-muted);
+  white-space: nowrap;
 }
