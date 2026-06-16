@@ -10,4 +10,13 @@ class Sessio {
   }
 }
 
-export { Sessio };
+class Reserva {
+  constructor({ id, sessioId, nomSoci, assistida = false }) {
+    this.id = id;
+    this.sessioId = sessioId;
+    this.nomSoci = nomSoci;
+    this.assistida = assistida;
+  }
+}
+
+export { Sessio, Reserva };
