@@ -13,4 +13,14 @@ function getSessions() {
   return JSON.parse(res).map(s => new Sessio(s));
 }
 
-export { getSessions };
+function saveSessions(sessions) {
+  localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions));
+}
+
+function addSessio(sessio) {
+  const sessions = getSessions();
+  sessions.push(sessio);
+  saveSessions(sessions);
+}
+
+export { getSessions, saveSessions, addSessio };
