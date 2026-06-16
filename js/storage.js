@@ -50,4 +50,23 @@ function saveReserves(reserves) {
   localStorage.setItem(RESERVES_KEY, JSON.stringify(reserves));
 }
 
+function addReserva(reserva) {
+  const reserves = getReserves();
+  reserves.push(reserva);
+  saveReserves(reserves);
+}
+
+function cancelReserva(id) {
+  const reserves = getReserves().filter(r => r.id !== id);
+  saveReserves(reserves);
+}
+
+function toggleAssistencia(id) {
+  const reserves = getReserves().map(r => {
+    if (r.id === id) r.assistida = !r.assistida;
+    return r;
+  });
+  saveReserves(reserves);
+}
+
 export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves };
