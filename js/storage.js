@@ -56,7 +56,7 @@ function addReserva(reserva) {
   saveReserves(reserves);
 }
 
-function addReserva(id) {
+function cancelReserva(id) {
   const reserves = getReserves().filter(r => r.id !== id);
   saveReserves(reserves);
 }
@@ -92,5 +92,5 @@ async function importSessionsFromJson(url) {
   return news.length;
 }
 
-export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves, addReserva, addReserva, toggleAssistencia, 
+export { getSessions, saveSessions, addSessio, deleteSessio, getReserves, saveReserves, addReserva, cancelReserva, toggleAssistencia, 
     generateReservaId, importSessionsFromJson };
