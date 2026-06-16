@@ -1,0 +1,26 @@
+[
+    {
+        "id": "s-001",
+        "activitat": "Yoga",
+        "dia": "Dilluns",
+        "hora": "09:00",
+        "monitor": "Anna García",
+        "aforament": 15
+    },
+    {
+        "id": "s-002",
+        "activitat": "Spinning",
+        "dia": "Dimarts",
+        "hora": "18:00",
+        "monitor": "Marc Puig",
+        "aforament": 20
+    },
+    {
+        "id": "s-003",
+        "activitat": "Pilates",
+        "dia": "Dimecres",
+        "hora": "10:00",
+        "monitor": "Laura Vidal",
+        "aforament": 12
+    }
+]
