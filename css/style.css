@@ -1,15 +1,15 @@
 /* Variables */
 
 :root {
-  --c-bg:        #0f1117;
-  --c-surface:   #1a1d27;
-  --c-card:      #22263a;
-  --c-border:    #2e3350;
-  --c-accent:    #00e5a0;
-  --c-accent2:   #7c6fff;
+  --c-bg:        #AA3939;
+  --c-surface:   #801515;
+  --c-card:      #FFAAAA;
+  --c-border:    #550000;
+  --c-accent:    #550000;
+  --c-accent2:   #801515;
   --c-danger:    #ff4f6a;
   --c-warning:   #ffb830;
-  --c-text:      #e8ecf4;
+  --c-text:      #ffffff;
   --c-muted:     #7a82a0;
   --radius:      10px;
   --radius-lg:   16px;
@@ -22,9 +22,9 @@
 /* Reset */
 
 *{ 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
 }
 
 body {
@@ -40,14 +40,19 @@ body {
 
 .topbar{
   background: var(--c-surface);
-  border-bottom: 1px solid var(--c-border);
+  border-right: 1px solid var(--c-border);
+  
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  height: 60px;
-  position: sticky;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  padding: 20px;
+  width: 20%;
+  height: 100vh;
+
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
 }
 
@@ -61,36 +66,40 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 20px;
 }
 
 .topbar__logo span{ 
-    color: var(--c-text); 
+  color: var(--c-text); 
 }
 
 nav{ 
-    display: flex; 
-    gap: 4px;
+  display: flex; 
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
 nav a{
   color: var(--c-muted);
   text-decoration: none;
-  padding: 6.4px 13.6px;
+  padding: 10px 12px;
   border-radius: var(--radius);
   font-size: 14px;
   font-weight: 500;
   transition: var(--transition);
+  width: 100%;
 }
 
-nav a:hover, nav a.active{
+nav a:hover, 
+nav a.active{
   color: var(--c-accent);
   background: rgba(0,229,160,0.08);
 }
 
 /* Main */
 .page {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 40px 24px 64px;
 }
 
@@ -102,15 +111,8 @@ nav a:hover, nav a.active{
   margin-bottom: 28px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-}
-
-.page-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--c-border);
-  margin-left: 8px;
 }
 
 /* Importar */
@@ -118,6 +120,7 @@ nav a:hover, nav a.active{
 .import-bar {
   display: flex;
   align-items: center;
+  justify-content: right;
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -125,14 +128,15 @@ nav a:hover, nav a.active{
 /* Section */
 
 .section { 
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
+  margin-left: 22%;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-size: 16.8px;
   font-weight: 600;
-  color: var(--c-accent2);
+  color: var(--c-text);
   text-transform: uppercase;
   letter-spacing: 1.28px;
   margin-bottom: 16px;
@@ -141,10 +145,10 @@ nav a:hover, nav a.active{
 /* Reservas */
 
 .box-resevas{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:1rem;
 }
 
 /* Btn */
@@ -165,11 +169,11 @@ nav a:hover, nav a.active{
 
 .btn--primary {
   background: var(--c-accent);
-  color: #0f1117;
+  color: var(--c-text);
 }
 
 .btn--primary:hover { 
-  filter: brightness(1.1); 
+  background: var(--c-danger);
 }
 
 .btn--outline {
@@ -289,10 +293,6 @@ nav a:hover, nav a.active{
   border-radius: var(--radius-lg);
   padding: 1.25rem;
   transition: var(--transition);
-}
-.session-card:hover {
-  border-color: var(--c-accent);
-  box-shadow: 0 0 0 1px var(--c-accent), var(--shadow);
 }
 
 .session-header {
