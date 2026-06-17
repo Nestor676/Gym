@@ -60,7 +60,7 @@ body {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
-  color: var(--c-accent);
+  color: var(--c-card);
   text-decoration: none;
   letter-spacing: -0.5px;
   display: flex;
@@ -81,7 +81,7 @@ nav{
 }
 
 nav a{
-  color: var(--c-muted);
+  color: var(--c-card);
   text-decoration: none;
   padding: 10px 12px;
   border-radius: var(--radius);
@@ -93,7 +93,7 @@ nav a{
 
 nav a:hover, 
 nav a.active{
-  color: var(--c-accent);
+  color: var(--c-danger);
   background: rgba(0,229,160,0.08);
 }
 
