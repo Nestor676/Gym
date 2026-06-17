@@ -96,6 +96,13 @@ function renderReserves() {
       }
     });
   });
+
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleAssistencia(btn.dataset.id);
+      render();
+    });
+  });
 }
 
 document.getElementById('import-btn').addEventListener('click', importarSessions);
