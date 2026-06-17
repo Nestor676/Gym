@@ -1,5 +1,5 @@
 
-import { getSessions, getReserves, importSessionsFromJson } from './storage.js';
+import { getSessions, getReserves, cancelReserva, toggleAssistencia, importSessionsFromJson } from './storage.js';
 import { crearBarraOcupacio } from './ocupacio.js';
 
 function renderSessions() {
@@ -42,7 +42,7 @@ async function importarSessions() {
     const n2 = await importSessionsFromJson('./datos/sessions_002.json');
     const total = n1 + n2;
     alert(total > 0 ? `Se han importado ${total} sesiones nuevas.` : 'No hay sesiones nuevas.');
-    renderSessions();
+    render();
   } catch (e) {
     alert('Error en la importacion: ' + e.message);
   } finally {
@@ -51,6 +51,49 @@ async function importarSessions() {
   }
 }
 
+function renderReserves() {
+  const reserves = getReserves();
+  const sessions = getSessions();
+  const container = document.getElementById('reserves-list');
+  container.innerHTML = '';
+
+  if (!reserves.length) {
+    container.innerHTML = '<p class="empty-msg">No hay reserves activas.</p>';
+    return;
+  }
+
+  reserves.forEach(r => {
+    const sessio = sessions.find(s => s.id === r.sessioId);
+    const nomSessio = sessio
+      ? `${sessio.activitat} – ${sessio.dia} ${sessio.hora}`
+      : 'Sesion eliminada';
+
+    const item = document.createElement('div');
+    item.className = `reserva-item ${r.assistida ? 'assistida' : ''}`;
+    item.innerHTML = `
+      <div class="reserva-info">
+        <strong>${r.nomSoci}</strong>
+        <span>${nomSessio}</span>
+        <span class="reserva-id">${r.id}</span>
+      </div>
+      <div class="reserva-accions">
+        <button class="btn btn--sm btn--outline toggle-btn" data-id="${r.id}">
+          ${r.assistida ? 'Assistida' : 'No presente'}
+        </button>
+        <button class="btn btn--sm btn--danger cancel-btn" data-id="${r.id}">
+          Eliminar
+        </button>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+}
+
 document.getElementById('import-btn').addEventListener('click', importarSessions);
 
-renderSessions();
+function render() {
+  renderSessions();
+  renderReserves();
+}
+
+render();
