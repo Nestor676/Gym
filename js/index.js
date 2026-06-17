@@ -1,5 +1,5 @@
 
-import { getSessions, getReserves } from './storage.js';
+import { getSessions, getReserves, importSessionsFromJson } from './storage.js';
 import { crearBarraOcupacio } from './ocupacio.js';
 
 function renderSessions() {
@@ -32,5 +32,25 @@ function renderSessions() {
     container.appendChild(card);
   });
 }
+
+async function importarSessions() {
+  const btn = document.getElementById('import-btn');
+  btn.disabled = true;
+  btn.textContent = 'Cargando...';
+  try {
+    const n1 = await importSessionsFromJson('./datos/sessions_001.json');
+    const n2 = await importSessionsFromJson('./datos/sessions_002.json');
+    const total = n1 + n2;
+    alert(total > 0 ? `Se han importado ${total} sesiones nuevas.` : 'No hay sesiones nuevas.');
+    renderSessions();
+  } catch (e) {
+    alert('Error en la importacion: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Importar sesiones (JSON)';
+  }
+}
+
+document.getElementById('import-btn').addEventListener('click', importarSessions);
 
 renderSessions();
