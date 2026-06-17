@@ -87,6 +87,15 @@ function renderReserves() {
     `;
     container.appendChild(item);
   });
+
+  document.querySelectorAll('.cancel-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (confirm('Quieres eliminar esta reserva?')) {
+        cancelReserva(btn.dataset.id);
+        render();
+      }
+    });
+  });
 }
 
 document.getElementById('import-btn').addEventListener('click', importarSessions);
