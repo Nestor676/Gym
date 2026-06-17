@@ -10,7 +10,7 @@
   --c-danger:    #ff4f6a;
   --c-warning:   #ffb830;
   --c-text:      #ffffff;
-  --c-muted:     #4b4e55;
+  --c-muted:     #000000;
   --radius:      10px;
   --radius-lg:   16px;
   --shadow:      0 4px 24px rgba(0,0,0,0.45);
@@ -292,7 +292,6 @@ nav a.active{
   display: block;
   font-size: 13.12px;
   font-weight: 600;
-  color: var(--c-muted);
   text-transform: uppercase;
   letter-spacing: 1.12px;
   margin-bottom: 6.4px;
@@ -469,6 +468,6 @@ tbody td {
 .barra-label {
   font-size: .8rem;
   font-weight: 600;
-  color: var(--c-muted);
+  color: var(--c-text);
   white-space: nowrap;
 }
