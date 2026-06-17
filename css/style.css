@@ -10,7 +10,7 @@
   --c-danger:    #ff4f6a;
   --c-warning:   #ffb830;
   --c-text:      #ffffff;
-  --c-muted:     #7a82a0;
+  --c-muted:     #4b4e55;
   --radius:      10px;
   --radius-lg:   16px;
   --shadow:      0 4px 24px rgba(0,0,0,0.45);
@@ -149,6 +149,57 @@ nav a.active{
   align-items:center;
   justify-content:space-between;
   margin-bottom:1rem;
+}
+
+.reserves-list{
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.reserva-item{
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reserva-item.assistida{
+  border-color: var(--c-accent);
+  opacity: .7;
+}
+
+.reserva-info{
+  display: flex; 
+  flex-direction: 
+  column; gap: .2rem; 
+}
+
+.reserva-info strong{ 
+  font-size: 1rem; 
+  color: var(--c-text); 
+}
+
+.reserva-info span{ 
+  font-size: .82rem; 
+  color: var(--c-muted);
+}
+
+.reserva-id{ 
+  font-family: monospace; 
+  font-size: .78rem; 
+  color: var(--c-accent2); 
+}
+
+.reserva-accions{ 
+  display: flex; 
+  gap: .5rem; 
+  flex-wrap: wrap; 
 }
 
 /* Btn */
@@ -383,7 +434,7 @@ tbody td {
 }
 
 .barra--libre{ 
-  background: var(--c-accent); 
+  background: var(--c-danger); 
 }
 
 .barra--alta{ 
@@ -391,7 +442,7 @@ tbody td {
 }
 
 .barra--llena{ 
-  background: var(--c-danger);
+  background: red;
 }
 
 .barra-hijo {

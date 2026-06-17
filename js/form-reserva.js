@@ -10,11 +10,11 @@ function populateSelect() {
 
   sessions.forEach(s => {
     const ocupades = getOcupacioSessio(s.id);
-    const lliures = s.aforament - ocupades;
-    const plena = lliures <= 0;
+    const libres = s.aforament - ocupades;
+    const plena = libres <= 0;
     const opt = document.createElement('option');
     opt.value = s.id;
-    opt.textContent = `${s.activitat} – ${s.dia} ${s.hora} (${plena ? 'Llena' : lliures + ' lliures'})`;
+    opt.textContent = `${s.activitat} – ${s.dia} ${s.hora} (${plena ? 'Llena' : libres + ' libres'})`;
     if (plena) opt.disabled = true;
     select.appendChild(opt);
   });
